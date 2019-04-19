@@ -15,16 +15,16 @@
 
 
     <!-- jQuery -->
-    <script src="assets\javascript\game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
-<body>
+<body style="background-image:href(.assets\images\background.jpg)">
 
     <header>Crystal Collector</header>
 
     <!-- <div class="background">
-        <img src="assets\images\background.jpg" alt="background"> -->
+        <img src=".assets\images\background.jpg" alt="background"> -->
 
     <div class="instructions">
         <p>You will be given a random number at the beginning of the game.</p>
@@ -37,41 +37,34 @@
     </div>
 
     <section class="random-number">
-        Random Number
+        <p>random number</p>
+        <p id="random"></p>
     </section>
 
     <aside class="game-stats">
-        <p>Wins: </p>
-        <p>Losses: </p>
+        <p id="wins">Wins: </p>
+        <p id ="losses">Losses: </p>
     </aside>
 
     <div class="scoreboard">
     <section class="score-header">
         <h3><strong>Your total score is</strong></h3>
-        <article>0</article>
+        <p id="total-score"></p>
     </section>
     </div>
 
     <section class="gem-row">
-        <img src="assets\images\amethyst-img.jpg" alt="amethyst">
-        <img src="assets\images\geode-img.jpg" alt="geode">
-        <img src="assets\images\diamond-img.jpg" alt="diamond">
-        <img src="assets\images\tourmaline-img.jpg" alt="tourmaline">
+        <img src="assets\images\amethyst-img.jpg" class="crystal" id="amethyst" alt="amethyst">
+        <img src="assets\images\geode-img.jpg" class="crystal" id="geode" alt="geode">
+        <img src="assets\images\diamond-img.jpg" class="crystal" id="diamond" alt="diamond">
+        <img src="assets\images\tourmaline-img.jpg" class="crystal" id="tourmaline" alt="tourmaline">
     </section>
 
     <!-- </div> -->
 
-    <script>
-    function randomNumber() {
-    var min = 19;
-    var max = 120;
-    var num = Math.floor(Math.random() * (max - min + 1)) + min;
-    document.getElementsByClassName('random-number').value = num;
-    console.log(randomNumber);
-  }
-  window.onload = randomNumber;
+    <script src ="./assets/javascript/game.js"></script>
+
     
-    </script>
 </body>
 </html>
 

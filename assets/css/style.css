@@ -1,13 +1,9 @@
 body {
    background-color: rgb(66, 65, 65);
+   /* background: ".assets/images/background.jpg" */
 }
 
-.background {
-    background-image: url("images/background.jpg");
-    background: repeat;
-}
-
-header{
+header {
     width: 0 auto;
     height: 100px;
     background-color: rgb(53, 3, 53);
