@@ -1,13 +1,19 @@
 var crystalClicked = 0;
 var numberToGuess = 0;
+
 var wins = 0;
 var losses = 0;
-var total = 0;
+
+function reset() {
+  crystalClicked = 0;
+  numberToGuess = 0;
+}
+
 
 function start() {
 
 
-  var numberToGuess = Math.floor(Math.random() * 100) + 19;
+  numberToGuess = Math.floor(Math.random() * 100) + 19;
   $("#random").text(numberToGuess)
 
   var amethyst = Math.floor(Math.random() * 12) + 1;
@@ -20,11 +26,9 @@ function start() {
   $("#tourmaline").attr("data-id", tourmaline);
 }
 
-start()
+start();
 
-
-$(".crystal").on("click", function gameMode() {
-  // console.log(this)
+$(".crystal").on("click", function () {
   var value = $(this).attr("data-id")
   crystalClicked += parseInt(value)
 
@@ -32,18 +36,16 @@ $(".crystal").on("click", function gameMode() {
   $("#wins").html("<p>Wins: <br>" + wins.toString() + "</p>");
   $("#losses").html("<p>Losses: <br>" + losses.toString() + "</p>");
 
+  if (parseInt(crystalClicked) > parseInt(numberToGuess)) {
+    losses++;
+    reset();
+    start();
 
-  //if the total = randomNumber then you win add to the win variable and restart game
-
-  // if (total > randomNumber) {
-  //   losses = -- //restart game
-
-
-  // if the total > randomNumber you lose add to the lose variable and restart game
-  // if the total < keep going 
-  //when game restarts, you only need to clear result and crystal values
-  // declare/initialize total variable, if you go Over, loss is incremented, however if you match randomNumber, a win is incremented (if/else)
-
+  }
+  else if (crystalClicked == numberToGuess) {
+    wins++;
+    reset();
+    start();
+  }
 
 });
-
